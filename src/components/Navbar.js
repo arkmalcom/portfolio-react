@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import NavbarLink from './NavbarLink';
 
 const Navbar = () => {
     const [isCollapsed, setIsCollapsed] = useState(true);
@@ -20,9 +20,9 @@ const Navbar = () => {
                         </button>
                         <div className={`${isCollapsed ? 'hidden' : ''} w-full md:block md:w-auto font-press-start`} id="mobile-menu">
                             <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-                                <NavLink exact to="/" activeClassName="block py-2 pr-4 pl-3 text-black bg-rose-200 rounded md:bg-transparent md:text-blue-700 md:p-0" className="text-gray-700">Home</NavLink>
-                                <NavLink exact to="/login" activeClassName="block py-2 pr-4 pl-3 text-black bg-rose-200 rounded md:bg-transparent md:text-blue-700 md:p-0" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">About</NavLink>
-                                <NavLink exact to="/create-post" activeClassName="block py-2 pr-4 pl-3 text-black bg-rose-200 rounded md:bg-transparent md:text-blue-700 md:p-0" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Blog</NavLink>
+                                <NavbarLink url="/" page="Home"></NavbarLink>
+                                <NavbarLink url="/login" page="About"></NavbarLink>
+                                <NavbarLink url="/create-post" page="Blog"></NavbarLink>
                             </ul>
                         </div>
                     </div>
